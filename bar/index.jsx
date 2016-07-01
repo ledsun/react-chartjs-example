@@ -1,6 +1,6 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
-const {Line} = require("react-chartjs")
+const {Bar} = require("react-chartjs")
 const randomColorFactor = require('../lib/randomColorFactor')
 
 const MONTHS = [
@@ -31,21 +31,8 @@ const config = {
     ],
     datasets: [
       {
-        label: "My First dataset",
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor()
-        ],
-        fill: false,
-        borderDash: [5, 5]
-      }, {
-        hidden: true,
-        label: 'hidden dataset',
+        label: 'Dataset 1',
+        backgroundColor: "rgba(220,220,220,0.5)",
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -56,7 +43,21 @@ const config = {
           randomScalingFactor()
         ]
       }, {
-        label: "My Second dataset",
+        hidden: true,
+        label: 'Dataset 2',
+        backgroundColor: "rgba(151,187,205,0.5)",
+        data: [
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor(),
+          randomScalingFactor()
+        ]
+      }, {
+        label: 'Dataset 3',
+        backgroundColor: "rgba(151,187,205,0.5)",
         data: [
           randomScalingFactor(),
           randomScalingFactor(),
@@ -68,61 +69,38 @@ const config = {
         ]
       }
     ]
+
   },
   options: {
+    // Elements options apply to all of the options unless overridden in a dataset
+    // In this case, we are setting the border of each bar to be 2px wide and green
+    elements: {
+      rectangle: {
+        borderWidth: 2,
+        borderColor: 'rgb(0, 255, 0)',
+        borderSkipped: 'bottom'
+      }
+    },
     responsive: true,
+    legend: {
+      position: 'top'
+    },
     title: {
       display: true,
-      text: 'Chart.js Line Chart'
-    },
-    tooltips: {
-      mode: 'label'
-    },
-    hover: {
-      mode: 'dataset'
-    },
-    scales: {
-      xAxes: [
-        {
-          display: true,
-          scaleLabel: {
-            show: true,
-            labelString: 'Month'
-          }
-        }
-      ],
-      yAxes: [
-        {
-          display: true,
-          scaleLabel: {
-            show: true,
-            labelString: 'Value'
-          },
-          ticks: {
-            suggestedMin: -10,
-            suggestedMax: 250
-          }
-        }
-      ]
+      text: 'Chart.js Bar Chart'
     }
   }
 }
 
-for (let dataset of config.data.datasets) {
-  dataset.borderColor = randomColor(0.4)
-  dataset.backgroundColor = randomColor(0.5)
-  dataset.pointBorderColor = randomColor(0.7)
-  dataset.pointBackgroundColor = randomColor(0.5)
-  dataset.pointBorderWidth = 1
-}
-
 ReactDOM.render(
-  <Line data={config.data} option={config.option}/>, document.querySelector('#container'))
+  <Bar data={config.data} option={config.option}/>, document.querySelector('#container'))
 
 function randomScalingFactor() {
-  return Math.round(Math.random() * 100)
+  return (Math.random() > 0.5
+    ? 1.0
+    : -1.0) * Math.round(Math.random() * 100)
 }
 
 function randomColor(opacity) {
-  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')'
+  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',.7)'
 }
