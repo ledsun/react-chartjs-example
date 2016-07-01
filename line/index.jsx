@@ -18,97 +18,96 @@ const MONTHS = [
   "December"
 ]
 
-const config = {
-  data: {
-    labels: [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July"
-    ],
-    datasets: [
-      {
-        label: "My First dataset",
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor()
-        ],
-        fill: false,
-        borderDash: [5, 5]
-      }, {
-        hidden: true,
-        label: 'hidden dataset',
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor()
-        ]
-      }, {
-        label: "My Second dataset",
-        data: [
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor(),
-          randomScalingFactor()
-        ]
-      }
-    ]
-  },
-  options: {
-    responsive: true,
-    title: {
-      display: true,
-      text: 'Chart.js Line Chart'
-    },
-    tooltips: {
-      mode: 'label'
-    },
-    hover: {
-      mode: 'dataset'
-    },
-    scales: {
-      xAxes: [
-        {
-          display: true,
-          scaleLabel: {
-            show: true,
-            labelString: 'Month'
-          }
-        }
+const data = {
+  labels: [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July"
+  ],
+  datasets: [
+    {
+      label: "My First dataset",
+      data: [
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor()
       ],
-      yAxes: [
-        {
-          display: true,
-          scaleLabel: {
-            show: true,
-            labelString: 'Value'
-          },
-          ticks: {
-            suggestedMin: -10,
-            suggestedMax: 250
-          }
-        }
+      fill: false,
+      borderDash: [5, 5]
+    }, {
+      hidden: true,
+      label: 'hidden dataset',
+      data: [
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor()
+      ]
+    }, {
+      label: "My Second dataset",
+      data: [
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor(),
+        randomScalingFactor()
       ]
     }
+  ]
+}
+
+const options = {
+  responsive: true,
+  title: {
+    display: true,
+    text: 'Chart.js Line Chart'
+  },
+  tooltips: {
+    mode: 'label'
+  },
+  hover: {
+    mode: 'dataset'
+  },
+  scales: {
+    xAxes: [
+      {
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Month'
+        }
+      }
+    ],
+    yAxes: [
+      {
+        display: true,
+        scaleLabel: {
+          show: true,
+          labelString: 'Value'
+        },
+        ticks: {
+          suggestedMin: -10,
+          suggestedMax: 250
+        }
+      }
+    ]
   }
 }
 
-for (let dataset of config.data.datasets) {
+for (let dataset of data.datasets) {
   dataset.borderColor = randomColor(0.4)
   dataset.backgroundColor = randomColor(0.5)
   dataset.pointBorderColor = randomColor(0.7)
@@ -117,7 +116,7 @@ for (let dataset of config.data.datasets) {
 }
 
 ReactDOM.render(
-  <Line data={config.data} option={config.option}/>, document.querySelector('#container'))
+  <Line data={data} options={options}/>, document.querySelector('#container'))
 
 function randomScalingFactor() {
   return Math.round(Math.random() * 100)
