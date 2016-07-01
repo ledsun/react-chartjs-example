@@ -1,6 +1,7 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const {Line} = require("react-chartjs")
+const randomColorFactor = require('../lib/randomColorFactor')
 
 const MONTHS = [
   "January",
@@ -18,7 +19,6 @@ const MONTHS = [
 ]
 
 const config = {
-  type: 'line',
   data: {
     labels: [
       "January",
@@ -121,10 +121,6 @@ ReactDOM.render(
 
 function randomScalingFactor() {
   return Math.round(Math.random() * 100)
-}
-
-function randomColorFactor() {
-  return Math.round(Math.random() * 255)
 }
 
 function randomColor(opacity) {
