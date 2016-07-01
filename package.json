@@ -2,19 +2,20 @@
   "name": "react-chartjs-example",
   "version": "0.0.1",
   "devDependencies": {
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
     "babel-plugin-transform-react-jsx": "^6.8.0",
-    "babelify": "^7.3.0",
-    "browserify": "^13.0.1",
     "chart.js": "^2.1.6",
     "react": "^15.1.0",
     "react-chartjs": "git://github.com/venari/react-chartjs.git#chartjs-v2",
     "react-dom": "^15.1.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "webpack": "^1.13.1"
   },
   "keywords": [],
   "license": "MIT",
   "main": "bundle.js",
   "scripts": {
-    "start": "browserify -t babelify line/index.jsx -o line/bundle.js -d"
+    "start": "webpack"
   }
 }
