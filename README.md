@@ -2,7 +2,8 @@
 
 ## Samlpes
 
-- [line](https://ledsun.github.io/react-chartjs-example/line/)
+1. [line](https://ledsun.github.io/react-chartjs-example/line/)
+1. [bar](https://ledsun.github.io/react-chartjs-example/bar/)
 
 ## Build
 

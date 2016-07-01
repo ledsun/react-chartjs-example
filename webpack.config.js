@@ -1,15 +1,18 @@
 module.exports = {
-  entry: './line/index.jsx', // エントリポイントのjsxファイル
+  entry: {
+    bar: './bar/index.jsx',
+    line: './line/index.jsx'
+  },
   output: {
-    filename: 'line/bundle.js' // 出力するファイル
+    filename: '[name]/bundle.js'
   },
   module: {
     loaders: [{
-      test: /\.jsx?$/, // 拡張子がjsxで
-      exclude: /node_modules/, // node_modulesフォルダ配下でなければ
-      loader: 'babel', // babel-loaderを使って変換する
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: 'babel',
       query: {
-        plugins: ["transform-react-jsx"] // babelのtransform-react-jsxプラグインを使ってjsxを変換
+        plugins: ["transform-react-jsx"]
       }
     }]
   }
