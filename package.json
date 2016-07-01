@@ -1,6 +1,11 @@
 {
   "name": "react-chartjs-example",
+  "description": "react-chartjs samples with Chart.js v2.",
   "version": "0.0.1",
+  "author": "shigeru.nakajima@gmail.com",
+  "bugs": {
+    "url": "https://github.com/ledsun/furiosa/react-chartjs-example"
+  },
   "devDependencies": {
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
@@ -12,9 +17,15 @@
     "watchify": "^3.7.0",
     "webpack": "^1.13.1"
   },
+  "homepage": "https://ledsun.github.io/react-chartjs-example",
   "keywords": [],
   "license": "MIT",
-  "main": "bundle.js",
+  "main": "README.md",
+  "private": "true",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ledsun/react-chartjs-example.git"
+  },
   "scripts": {
     "start": "webpack"
   }
