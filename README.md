@@ -2,7 +2,7 @@
 
 ## Samlpes
 
-- [line](line/README.html)
+- [line](https://ledsun.github.io/react-chartjs-example/line/)
 
 ## Build
 
