@@ -107,7 +107,7 @@ const options = {
   }
 }
 
-for (let dataset of config.data.datasets) {
+for (let dataset of data.datasets) {
   dataset.borderColor = randomColor(0.4)
   dataset.backgroundColor = randomColor(0.5)
   dataset.pointBorderColor = randomColor(0.7)
