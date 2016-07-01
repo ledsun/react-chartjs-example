@@ -27,6 +27,7 @@
     "url": "git@github.com:ledsun/react-chartjs-example.git"
   },
   "scripts": {
-    "start": "webpack"
+    "start": "webpack",
+    "copy": "cpx '{line,bar}/*' gh-pages/"
   }
 }
