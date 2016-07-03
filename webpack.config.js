@@ -15,5 +15,6 @@ module.exports = {
         plugins: ["transform-react-jsx"]
       }
     }]
-  }
+  },
+  devtool: '#inline-source-map'
 }
