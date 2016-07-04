@@ -15,6 +15,7 @@
     "react": "^15.1.0",
     "react-chartjs": "git://github.com/jhudson8/react-chartjs.git#chartjs-v2",
     "react-dom": "^15.1.0",
+    "template-html": "git@github.com:ledsun/template-html.git#keep_input_files_directory_structure",
     "watchify": "^3.7.0",
     "webpack": "^1.13.1"
   },
@@ -28,7 +29,9 @@
     "url": "git@github.com:ledsun/react-chartjs-example.git"
   },
   "scripts": {
-    "start": "webpack",
-    "copy": "cpx '{line,bar}/*' gh-pages/"
+    "build": "webpack",
+    "copy": "cpx '{line,bar}/*.{js,jsx}' gh-pages/",
+    "start": "npm-run-all build copy template",
+    "template": "template-html {line,bar}/index.html -t template.html -o gh-pages"
   }
 }

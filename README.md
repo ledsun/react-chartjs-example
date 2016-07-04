@@ -10,20 +10,20 @@
 1. Add a directory for sample
 1. Create an `index.html` and an `index.jsx`
 1. Add an `entry` to the `webpack.confi.json`
-1. Add a directory name to a npm script of the `copy`
+1. Add a directory name to a npm script of the `copy` and `template`
 
 ### Build
 
 ```
 npm i
-npm start
+npm run build
 ```
 
 ### Deploy
 
 ```
 git clone -b gh-pages git@github.com:ledsun/react-chartjs-example.git gh-pages
-npm run copy
+npm start
 cd gh-pages
 git commit -m 'XXX'
 git push origin gh-pages
