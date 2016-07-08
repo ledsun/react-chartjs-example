@@ -92,28 +92,44 @@ const App = React.createClass({
       ]
     }
   },
-  handleClick() {
+  randmizeData() {
     const zero = Math.random() < 0.2
       ? true
       : false
 
-    const newData = this.state.datasets.map((dataset) => {
-      return {
+    this.state.datasets.forEach((dataset) => {
+      Object.assign(dataset, {
         backgroundColor: randomColor(),
         data: dataset.data.map(function() {
           return zero
             ? 0.0
             : randomScalingFactor()
         })
-      }
+      })
     })
 
-    this.setState({datasets: newData})
+    this.setState(this.state.datasets)
+  },
+  addDataset() {
+    const newDataset = {
+      label: 'Dataset ' + this.state.datasets.length,
+      backgroundColor: randomColor(),
+      data: []
+    }
+
+    for (label of this.state.labels) {
+      newDataset.data.push(randomScalingFactor())
+    }
+
+    this.state.datasets.push(newDataset)
+
+    this.setState(this.state.datasets)
   },
   render() {
     return <div>
       <Bar data={this.state} options={options} ref={(ref) => this.Bar = ref}/>
-      <button onClick={this.handleClick}>Randomize Data</button>
+      <button onClick={this.randmizeData}>Randomize Data</button>
+      <button onClick={this.addDataset}>Add Dataset</button>
     </div>
   }
 })
