@@ -122,7 +122,10 @@ const App = React.createClass({
     }
 
     this.state.datasets.push(newDataset)
-
+    this.setState(this.state.datasets)
+  },
+  removeDataset() {
+    this.state.datasets.splice(0, 1)
     this.setState(this.state.datasets)
   },
   render() {
@@ -130,6 +133,7 @@ const App = React.createClass({
       <Bar data={this.state} options={options} ref={(ref) => this.Bar = ref}/>
       <button onClick={this.randmizeData}>Randomize Data</button>
       <button onClick={this.addDataset}>Add Dataset</button>
+      <button onClick={this.removeDataset}>Remove Dataset</button>
     </div>
   }
 })
