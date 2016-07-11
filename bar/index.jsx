@@ -108,7 +108,7 @@ const App = React.createClass({
       })
     })
 
-    this.setState(this.state.datasets)
+    this.forceUpdate()
   },
   addDataset() {
     const newDataset = {
@@ -122,11 +122,37 @@ const App = React.createClass({
     }
 
     this.state.datasets.push(newDataset)
-    this.setState(this.state.datasets)
+    this.forceUpdate()
   },
   removeDataset() {
     this.state.datasets.splice(0, 1)
-    this.setState(this.state.datasets)
+    this.forceUpdate()
+  },
+  addData() {
+    if (this.state.datasets.length > 0) {
+      const MONTHS = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ]
+
+      const month = MONTHS[this.state.labels.length % MONTHS.length]
+      this.state.labels.push(month)
+
+      for (dataset of this.state.datasets) {
+        dataset.data.push(randomScalingFactor())
+      }
+      this.forceUpdate()
+    }
   },
   render() {
     return <div>
@@ -134,6 +160,7 @@ const App = React.createClass({
       <button onClick={this.randmizeData}>Randomize Data</button>
       <button onClick={this.addDataset}>Add Dataset</button>
       <button onClick={this.removeDataset}>Remove Dataset</button>
+      <button onClick={this.addData}>Add Data</button>
     </div>
   }
 })
