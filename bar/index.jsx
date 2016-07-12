@@ -108,7 +108,7 @@ const App = React.createClass({
       })
     })
 
-    this.setState(this.state.datasets)
+    this.forceUpdate()
   },
   addDataset() {
     const newDataset = {
@@ -122,11 +122,11 @@ const App = React.createClass({
     }
 
     this.state.datasets.push(newDataset)
-    this.setState(this.state.datasets)
+    this.forceUpdate()
   },
   removeDataset() {
     this.state.datasets.splice(0, 1)
-    this.setState(this.state.datasets)
+    this.forceUpdate()
   },
   addData() {
     if (this.state.datasets.length > 0) {
@@ -154,6 +154,11 @@ const App = React.createClass({
       this.forceUpdate()
     }
   },
+  removeData() {
+    this.state.labels.splice(-1, 1) // remove the label first
+    this.state.datasets.forEach((dataset) => dataset.data.pop())
+    this.forceUpdate()
+  },
   render() {
     return <div>
       <Bar data={this.state} options={options} ref={(ref) => this.Bar = ref}/>
@@ -161,6 +166,7 @@ const App = React.createClass({
       <button onClick={this.addDataset}>Add Dataset</button>
       <button onClick={this.removeDataset}>Remove Dataset</button>
       <button onClick={this.addData}>Add Data</button>
+      <button onClick={this.removeData}>Remove Data</button>
     </div>
   }
 })
