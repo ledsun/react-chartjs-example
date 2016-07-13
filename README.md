@@ -3,15 +3,49 @@
 ## Exists samlpes
 
 1. [line](https://ledsun.github.io/react-chartjs-example/line/)
-1. [bar](https://ledsun.github.io/react-chartjs-example/bar/)
-1. [radar](https://ledsun.github.io/react-chartjs-example/radar/)
+2. [bar](https://ledsun.github.io/react-chartjs-example/bar/)
+3. [radar](https://ledsun.github.io/react-chartjs-example/radar/)
+
+## Todos
+
+- [ ] AnimationCallbacks/progress-bar.html
+- [ ] bar-horizontal.html
+- [ ] bar-multi-axis.html
+- [ ] bar-stacked.html
+- [x] bar.html
+- [ ] bubble.html
+- [ ] combo-bar-line.html
+- [ ] data_label_combo-bar-line.html
+- [ ] different-point-sizes.html
+- [ ] doughnut.html
+- [ ] line-customTooltips.html
+- [ ] line-legend.html
+- [ ] line-logarithmic.html
+- [ ] line-multi-axis.html
+- [ ] line-multiline-labels.html
+- [ ] line-skip-points.html
+- [ ] line-stacked-area.html
+- [ ] line-x-axis-filter.html
+- [x] line.html
+- [ ] pie-customTooltips.html
+- [ ] pie.html
+- [ ] polar-area.html
+- [ ] radar-skip-points.html
+- [x] radar.html
+- [ ] scatter-logX.html
+- [ ] scatter-multi-axis.html
+- [ ] scatter.html
+- [ ] timeScale/combo-time-scale.html
+- [ ] timeScale/line-time-point-data.html
+- [ ] timeScale/line-time-scale.html
+- [ ] tooltip-hooks.html
 
 ## Add a sample
 
 1. Add a directory for sample
-1. Create an `index.html` and an `index.jsx`
-1. Add an `entry` to the `webpack.confi.json`
-1. Add a directory name to a npm script of the `copy` and `template`
+2. Create an `index.html` and an `index.jsx`
+3. Add an `entry` to the `webpack.confi.json`
+4. Add a directory name to a npm script of the `copy` and `template`
 
 ### Build
 
