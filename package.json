@@ -30,8 +30,8 @@
   },
   "scripts": {
     "build": "webpack",
-    "copy": "cpx '{line,bar}/*.{js,jsx}' gh-pages/",
+    "copy": "cpx '{line,bar,radar}/*.{js,jsx}' gh-pages/",
     "start": "npm-run-all build copy template",
-    "template": "template-html {line,bar}/index.html -t template.html -o gh-pages --preserve-tree"
+    "template": "template-html {line,bar,radar}/index.html -t template.html -o gh-pages --preserve-tree"
   }
 }

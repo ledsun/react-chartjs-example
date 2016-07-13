@@ -1,7 +1,8 @@
 module.exports = {
   entry: {
     bar: './bar/index.jsx',
-    line: './line/index.jsx'
+    line: './line/index.jsx',
+    radar: './radar/index.jsx'
   },
   output: {
     filename: '[name]/bundle.js'
