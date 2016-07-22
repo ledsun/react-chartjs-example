@@ -23,8 +23,10 @@
 - [ ] line-logarithmic.html
 - [ ] line-multi-axis.html
 - [ ] line-multiline-labels.html
+- [ ] line-non-numeric-y.html
 - [ ] line-skip-points.html
 - [ ] line-stacked-area.html
+- [ ] line-stepped.html
 - [ ] line-x-axis-filter.html
 - [x] line.html
 - [ ] pie-customTooltips.html
