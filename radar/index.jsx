@@ -1,7 +1,8 @@
 const React = require('react')
 const ReactDOM = require('react-dom')
 const {Radar} = require("react-chartjs")
-const randomColorFactor = require('../lib/randomColorFactor')
+const randomColor = require('../lib/randomColor')
+const randomScalingFactor = require('../lib/randomScalingFactor')
 
 const data = {
   labels: [
@@ -88,11 +89,3 @@ const options = {
 
 ReactDOM.render(
   <Radar data={data} options={options}/>, document.querySelector('#container'))
-
-function randomScalingFactor() {
-  return Math.round(Math.random() * 100)
-}
-
-function randomColor(opacity) {
-  return 'rgba(' + randomColorFactor() + ',' + randomColorFactor() + ',' + randomColorFactor() + ',' + (opacity || '.3') + ')'
-}
