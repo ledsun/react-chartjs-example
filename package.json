@@ -32,9 +32,9 @@
   },
   "scripts": {
     "build": "webpack",
-    "copy": "cpx '{line,bar,radar}/*.{js,jsx}' gh-pages/",
+    "copy": "cpx '{line,bar,pie,radar}/*.{js,jsx}' gh-pages/",
     "copy-sample": "cpx 'node_modules/chart.js/samples/*' 'gh-pages/node_modules/chart.js/samples/' -t script-src-httpsify",
     "start": "npm-run-all build copy template",
-    "template": "template-html {line,bar,radar}/index.html -t template.html -o gh-pages --preserve-tree"
+    "template": "template-html {line,bar,pie,radar}/index.html -t template.html -o gh-pages --preserve-tree"
   }
 }

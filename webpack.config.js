@@ -2,6 +2,7 @@ module.exports = {
   entry: {
     bar: './bar/index.jsx',
     line: './line/index.jsx',
+    pie: './pie/index.jsx',
     radar: './radar/index.jsx'
   },
   output: {

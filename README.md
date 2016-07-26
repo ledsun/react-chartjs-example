@@ -2,9 +2,7 @@
 
 ## Exists samlpes
 
-1. [line](https://ledsun.github.io/react-chartjs-example/line/)
-2. [bar](https://ledsun.github.io/react-chartjs-example/bar/)
-3. [radar](https://ledsun.github.io/react-chartjs-example/radar/)
+[Samlpes](https://ledsun.github.io/react-chartjs-example/)
 
 ## Todos
 
@@ -30,7 +28,7 @@
 - [ ] line-x-axis-filter.html
 - [x] line.html
 - [ ] pie-customTooltips.html
-- [ ] pie.html
+- [x] pie.html
 - [ ] polar-area.html
 - [ ] radar-skip-points.html
 - [x] radar.html
